@@ -1,0 +1,16 @@
+.card {
+    background-color: white;
+    border: 1px solid grey;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+
+.card > img {
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+}
+
+.card-body {
+    padding: 20px;
+}

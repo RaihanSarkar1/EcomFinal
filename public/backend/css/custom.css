@@ -1,0 +1,36 @@
+/**
+ *
+ * Apply your custom CSS here
+ *
+*/
+
+body {	
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.card > img {
+    padding-left: 20px;
+    padding-right: 30px;
+}
+
+.card-name {
+    color: black;
+    font-size: 13px;
+}
+
+.card > button {
+    margin-top: 10px;
+}
+
+.category {
+    margin-bottom: 40px;
+}
