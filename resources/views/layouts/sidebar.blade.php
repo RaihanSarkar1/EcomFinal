@@ -138,12 +138,13 @@
                             </a>
                         </li>
                     </ul>
-                    <li>
+                    <ul>
+                        <li>
                             <a href="{{ url('categories') }}">
                                 <span class="title">View Categories</span>
                             </a>
                         </li>
-
+                    </ul>   
                     <li class="active opened active">
                     <a href="#">
                         <i class="linecons-truck"></i>

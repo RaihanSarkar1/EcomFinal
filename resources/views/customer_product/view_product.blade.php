@@ -19,18 +19,22 @@
             @foreach ($categories as $category)
                 <div class="category">
                     <h4>{{ $category }}</h4>
-        
+                    
                     @foreach ($products as $product)
                         @if ($product->category_name == $category)
-                            <div class="card">
-                            <img src="{{ asset('storage/'.$product->photo) }}" alt="" class="" height="100px">
-                                <div class="card-body">
-                                  <h5 class="card-name">{{ $product->name }}</h5>
-                                  <p class="card-code">{{ $product->code }}</p>
-                                  <p class="card-price">Price: {{ $product->price }}</p>
-                                  <a href="{{ url('product/addToCart/'.$product->id) }}"><button type="button" class="btn btn-red">Add to cart</button></a>
+                            <a href="{{url('product/'.$product->id)}}">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="{{ asset('storage/'.$product->photo) }}" alt="" class="" height="100px">
+                                    </div>
+                                    <div class="card-body">
+                                    <h5 class="card-name">{{ $product->name }}</h5>
+                                    <p class="card-code">{{ $product->code }}</p>
+                                    <p class="card-price">Price: {{ $product->price }}</p>
+                                    <a href="{{ url('product/addToCart/'.$product->id) }}"><button type="button" class="btn btn-red">Add to cart</button></a>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         @endif
                     @endforeach
             

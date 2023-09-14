@@ -19,10 +19,13 @@
             
                 <div class="category">
                     <h4>{{ $category->name }}</h4>
-        
+                    
                     @foreach ($products as $product)
+                    <a href="{{url('product/'.$product->id)}}">
                             <div class="card">
-                            <img src="{{ asset('storage/'.$product->photo) }}" alt="" class="" height="100px">
+                                <div class="card-img">
+                                    <img src="{{ asset('storage/'.$product->photo) }}" alt="" class="" height="100px">
+                                </div>
                                 <div class="card-body">
                                   <h5 class="card-name">{{ $product->name }}</h5>
                                   <p class="card-code">{{ $product->code }}</p>
@@ -30,6 +33,7 @@
                                   <a href="{{ url('product/addToCart/'.$product->id) }}"><button type="button" class="btn btn-red">Add to cart</button></a>
                                 </div>
                             </div>
+                    </a>
                     @endforeach
             
                 </div>
