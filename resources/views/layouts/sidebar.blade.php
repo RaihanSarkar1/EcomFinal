@@ -94,6 +94,11 @@
                                 <span class="title">View Products</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ url('categories') }}">
+                                <span class="title">View Categories</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="active opened active">
@@ -133,6 +138,11 @@
                             </a>
                         </li>
                     </ul>
+                    <li>
+                            <a href="{{ url('categories') }}">
+                                <span class="title">View Categories</span>
+                            </a>
+                        </li>
 
                     <li class="active opened active">
                     <a href="#">

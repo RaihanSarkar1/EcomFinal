@@ -47,4 +47,10 @@ class OrderController extends Controller
 
     }
 
+    function viewOrder($id) {
+        $orders = Order::find($id);
+
+        dd($orders);
+    }
+
 }

@@ -86,4 +86,15 @@ class CustomerController extends Controller
         }
 
     }
+
+    function categories() {
+        $categories = Category::get();
+        return view ('customer_product.categories', compact('categories'));
+    }
+
+    function category($id) {
+        $category = Category::find($id);
+        $products = $category->products;
+        return view ('customer_product.category', compact('products','category'));
+    }
 }
