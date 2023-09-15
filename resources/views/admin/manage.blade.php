@@ -1,12 +1,13 @@
 @extends('layouts.master')
 @section('page_css')
     <link rel="stylesheet" href="{{ asset('backend/js/datatables/dataTables.bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/custom.css') }}">
 @endsection
 @section('contents')
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="panel-title">
-                My Orders
+                Orders
             </div>
         </div>
         <div class="panel-body">
@@ -17,31 +18,39 @@
                     <thead>
                     <tr>
                         <th>Order ID</th>
+                        <th>Name</th>
                         <th>Address</th>
                         <th>Payment</th>
-                        <th>Products</th>
                         <th>Status</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
 
+                    <!-- <tfoot>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Payment</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    </tfoot> -->
 
                     @if ($orders)
                         <tbody>
                         @foreach($orders as $order)
                             <tr>
                                 <td>{{ $order->id }}</td>
+                                <td>{{ $order->name }}</td>
                                 <td>{{ $order->address }}</td>
                                 <td>{{ $order->payment }}</td>
-                                <td>
-                                    <ul>
-                                        @foreach($order->products as $product)
-                                            <li>
-                                                {{ $product->name }}
-                                            </li>
-                                        @endforeach
-                                    </ul>    
-                                </td>
                                 <td>{{ $order->status }}</td>
+                                <td class="button-list">
+                                    <a href="{{ url('order/'.$order->id) }}"><button type="button" class="btn btn-purple btn-block" style="display:block">View Order</button></a>
+                                    <a href="{{ url('order/approve/'.$order->id) }}"><button type="button" class="btn btn-blue btn-block" style="display:block">Approve</button></a>
+                                    <a href="{{ url('order/cancel/'.$order->id) }}"><button type="button" class="btn btn-danger btn-block" style="display:block">Cancel</button></a>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>

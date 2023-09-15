@@ -16,7 +16,7 @@ class OrderController extends Controller
     function manageOrders() {
         $orders = Order::get();
 
-        return view('order.manage', compact('orders'));
+        return view('admin.manage', compact('orders'));
     }
     
     function approve($id) {
@@ -41,6 +41,7 @@ class OrderController extends Controller
         $user = User::find($user_id);
         
         $orders = $user->orders;
+
         
         return view('order.my_order', compact('orders'));
         
@@ -48,9 +49,12 @@ class OrderController extends Controller
     }
 
     function viewOrder($id) {
-        $orders = Order::find($id);
 
-        dd($orders);
+        $order = Order::find($id);
+        $user = $order->user;
+        $products = $order->products;
+
+        return view('admin.order', compact('order','user','products'));
     }
 
 }

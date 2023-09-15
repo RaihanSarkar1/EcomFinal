@@ -40,3 +40,7 @@ body {
 .category {
     margin-bottom: 40px;
 }
+
+.button-list>a> button{
+    margin-bottom: 10px;
+}
