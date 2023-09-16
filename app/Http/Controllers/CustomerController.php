@@ -97,4 +97,10 @@ class CustomerController extends Controller
         $products = $category->products;
         return view ('customer_product.category', compact('products','category'));
     }
+
+    function viewAProduct($id) {
+        $product = Product::find($id);
+
+        return view('customer_product.product',compact('product'));
+    }
 }

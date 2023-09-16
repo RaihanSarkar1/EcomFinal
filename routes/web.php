@@ -55,6 +55,9 @@ Route::get('order/cancel/{id}', 'OrderController@cancel')->middleware('isLoggedI
 
 // Customer View
 Route::get('customer_view_product', 'CustomerController@viewProducts')->middleware('isLoggedIn');
+// Customer view a product
+Route::get('product/{id}', 'CustomerController@viewAProduct')->middleware('isLoggedIn');
+
 Route::get('categories', 'CustomerController@categories')->middleware('isLoggedIn');
 Route::get('category/{id}', 'CustomerController@category')->middleware('isLoggedIn');
 Route::get('product/addToCart/{id}', 'CustomerController@addToCart')->middleware('isLoggedIn');

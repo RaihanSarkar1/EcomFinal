@@ -20,23 +20,28 @@
                 <div class="category">
                     <h4>{{ $category }}</h4>
                     
-                    @foreach ($products as $product)
-                        @if ($product->category_name == $category)
-                            <a href="{{url('product/'.$product->id)}}">
-                                <div class="card">
-                                    <div class="card-img">
-                                        <img src="{{ asset('storage/'.$product->photo) }}" alt="" class="" height="100px">
+                    <div class="box">
+                        
+                        @foreach ($products as $product)
+                            @if ($product->category_name == $category)
+                                <a href="{{url('product/'.$product->id)}}">
+                                    <div class="product-card">
+                                        <div class="card-img">
+                                            <img src="{{ asset('storage/'.$product->photo) }}" alt="" class="" height="200px">
+                                        </div>
+                                        <div class="card-body">
+                                        <h1 class="card-name">{{ $product->name }}</h1>
+                                        <p class="card-code">Code: {{ $product->code }}</p>
+                                        <p class="card-price">Price: {{ $product->price }}</p>
+                                        <div class="btn-cart">
+                                            <a href="{{ url('product/addToCart/'.$product->id) }}"><button type="button" class="btn btn-red btn-block">Add to cart</button></a>
+                                        </div>
+                                        </div>
                                     </div>
-                                    <div class="card-body">
-                                    <h5 class="card-name">{{ $product->name }}</h5>
-                                    <p class="card-code">{{ $product->code }}</p>
-                                    <p class="card-price">Price: {{ $product->price }}</p>
-                                    <a href="{{ url('product/addToCart/'.$product->id) }}"><button type="button" class="btn btn-red">Add to cart</button></a>
-                                    </div>
-                                </div>
-                            </a>
-                        @endif
-                    @endforeach
+                                </a>
+                            @endif
+                        @endforeach
+                    </div>
             
                 </div>
                 @endforeach

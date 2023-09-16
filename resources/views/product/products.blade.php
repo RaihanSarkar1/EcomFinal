@@ -34,7 +34,8 @@
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->price }}</td>
                                 <td>@foreach($product->categories as $category)
-                                    {{ $category->name }},
+                                    {{ $loop->first ? '': ', '}}
+                                    {{ $category->name }}
                                     @endforeach
                                 </td>
                                 <td><div class="">
