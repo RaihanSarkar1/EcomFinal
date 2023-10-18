@@ -27,6 +27,14 @@ class OrderController extends Controller
         return redirect('manage_orders');
     }
     
+    function deliver($id) {
+        $order = Order::find($id)->update([
+            'status' => 'Delivered'
+        ]);
+        
+        return redirect('manage_orders');
+    }
+    
     function cancel($id) {
         $order = Order::find($id)->update([
             'status' => 'Cancelled'

@@ -50,6 +50,7 @@ Route::post('product/edit/{id}', 'ProductController@updateProduct')->middleware(
 
 Route::get('manage_orders', 'OrderController@manageOrders')->middleware('isLoggedIn','isAdmin');
 Route::get('order/approve/{id}', 'OrderController@approve')->middleware('isLoggedIn','isAdmin');
+Route::get('order/deliver/{id}', 'OrderController@deliver')->middleware('isLoggedIn','isAdmin');
 Route::get('order/cancel/{id}', 'OrderController@cancel')->middleware('isLoggedIn','isAdmin');
 
 

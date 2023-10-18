@@ -39,7 +39,7 @@
                     <div class="price">
                         <h1>Price: {{$product->price}}</h1>
                     </div>
-
+    
                     <div class="btn-cart">
                         <a href="{{ url('product/addToCart/'.$product->id) }}"><button type="button" class="btn btn-red btn-lg">Add to cart</button></a>
                     </div>

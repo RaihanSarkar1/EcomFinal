@@ -84,6 +84,7 @@
                     </table>
                     <div class="button-list">
                         <a href="{{ url('order/approve/'.$order->id) }}"><button type="button" class="btn btn-blue btn-block" style="display:block">Approve</button></a>
+                        <a href="{{ url('order/deliver/'.$order->id) }}"><button type="button" class="btn btn-success btn-block " style="display:block">Delivered</button></a>
                         <a href="{{ url('order/cancel/'.$order->id) }}"><button type="button" class="btn btn-danger btn-block " style="display:block">Cancel</button></a>
                     </div>
                 </div>
