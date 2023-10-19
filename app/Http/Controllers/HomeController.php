@@ -40,7 +40,7 @@ class HomeController extends Controller
 //            return redirect('login');
 //        }
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            return redirect('home');
+            return redirect('index');
         } else {
             return redirect('login');
         }
