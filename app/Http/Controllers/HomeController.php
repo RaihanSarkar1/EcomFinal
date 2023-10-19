@@ -20,6 +20,10 @@ class HomeController extends Controller
         return view('auth.login');
     }
 
+    public function viewAdmin() {
+        return view('dashboard');
+    }
+
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -40,7 +44,7 @@ class HomeController extends Controller
 //            return redirect('login');
 //        }
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            return redirect('index');
+            return redirect('home');
         } else {
             return redirect('login');
         }

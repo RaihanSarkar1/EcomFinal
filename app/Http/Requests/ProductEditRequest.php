@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ProductEditRequest extends FormRequest
 {
@@ -25,7 +26,7 @@ class ProductEditRequest extends FormRequest
     {
 
         return [
-            'code' => 'required|unique:products,code',
+            'code' => 'required|unique:products,code, "'.$this->route('id').'"',
             'name' => 'required',
             'price' => 'required|numeric|min:0',
             'category' => 'required',

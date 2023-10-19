@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $categories = DB::table('categories')->get();
+    return view('index', compact('categories'));
 });
 
 Route::get('login', 'HomeController@index');
@@ -26,6 +27,7 @@ Route::get('change_password', 'HomeController@viewChangePassword')->middleware('
 Route::post('change_password', 'HomeController@changePassword')->middleware('isLoggedIn');
 
 // Admin View
+Route::get('admin', 'HomeController@viewAdmin')->middleware('isLoggedIn','isAdmin');
 Route::get('add_user', 'UserController@addView')->middleware('isLoggedIn','isAdmin');
 Route::get('users', 'UserController@index')->middleware('isLoggedIn','isAdmin');
 Route::get('user/edit/{id}', 'UserController@edit')->middleware('isLoggedIn','isAdmin');
