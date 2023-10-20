@@ -27,7 +27,7 @@
                                 <a href="{{url('product/'.$product->id)}}">
                                     <div class="product-card">
                                         <div class="card-img">
-                                            <img src="{{ asset('storage/'.$product->photo) }}" alt="" class="" height="200px">
+                                            <img src="{{ asset('storage/'.$product->photo) }}" alt="Product Image" class="" height="200px">
                                         </div>
                                         <div class="card-body">
                                         <h1 class="card-name">{{ $product->name }}</h1>

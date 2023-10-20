@@ -13,9 +13,10 @@ class UserSeeder extends Seeder
     {
         \Illuminate\Support\Facades\DB::table('users')
             ->insert([
-                'name' => 'seeder 1',
-                'email'  => 'seeder@seeder.com',
-                'password' => \Illuminate\Support\Facades\Hash::make('welcome'),
+                'name' => 'raihan',
+                'email'  => 'raihan@gmail.com',
+                'password' => \Illuminate\Support\Facades\Hash::make('raihan'),
+                'role' => '1',
             ]);
     }
 }
