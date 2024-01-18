@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Product;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $categories = DB::table('categories')->get();
-    return view('index', compact('categories'));
+    $products = Product::all();
+    return view('index', compact('categories','products'));
 });
 
 Route::get('login', 'HomeController@index');
