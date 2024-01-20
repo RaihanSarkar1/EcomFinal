@@ -34,7 +34,23 @@
                                             </div><!-- End .header-menu -->
                                         </div>
                                     </li>
+                                    @auth
+                                    <li>
+                                        <div class="header-dropdown">
+                                            <a href="#">{{ Auth::user()->name }}</a>
+                                            <div class="header-menu">
+                                                <ul>
+                                                    <li><a href="{{ url('change_password') }}">Change Password</a></li>
+                                                    <li><a href="{{ url('logout') }}">Logout</a></li>
+                                                </ul>
+                                            </div><!-- End .header-menu -->
+                                        </div>
+                                    </li>
+                                    @endauth
+
+                                    @guest
                                     <li><a href="#signin-modal" data-toggle="modal">Sign in / Sign up</a></li>
+                                    @endguest
                                 </ul>
                             </li>
                         </ul><!-- End .top-menu -->

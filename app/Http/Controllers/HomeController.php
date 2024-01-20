@@ -16,7 +16,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-
         return view('auth.login');
     }
 
@@ -44,7 +43,13 @@ class HomeController extends Controller
 //            return redirect('login');
 //        }
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            return redirect('home');
+            $role = Auth::user()->role;
+            if ($role == '1'){
+                return redirect('admin');
+            }
+            else {
+                return redirect('/');
+            }
         } else {
             return redirect('login');
         }
@@ -64,7 +69,7 @@ class HomeController extends Controller
     public function logout()
     {
         \request()->session()->flush();
-        return redirect('login');
+        return redirect('/');
     }
 
     public function viewChangePassword()
