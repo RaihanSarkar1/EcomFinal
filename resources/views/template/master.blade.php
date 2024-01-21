@@ -4,6 +4,7 @@
 
 <head>
     @include('template.header_links')
+    @yield('page_css')
 </head>
 
 <body>

@@ -1,4 +1,4 @@
-@extends('user_dashboard.master')
+@extends('template.master')
 
 @section('contents')
 

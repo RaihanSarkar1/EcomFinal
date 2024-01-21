@@ -100,11 +100,12 @@ class CustomerController extends Controller
 
     function viewAProduct($id) {
         $product = Product::find($id);
-
-        return view('product.viewProduct',compact('product'));
+        $categories = Category::get();
+        return view('customer_product.product',compact('product', 'categories'));
     }
 
     function myAccount() {
-        return view('user_dashboard');
+        $categories = Category::get();
+        return view('user_dashboard', compact('categories'));
     }
 }
