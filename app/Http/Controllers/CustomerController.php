@@ -101,6 +101,10 @@ class CustomerController extends Controller
     function viewAProduct($id) {
         $product = Product::find($id);
 
-        return view('customer_product.product',compact('product'));
+        return view('product.viewProduct',compact('product'));
+    }
+
+    function myAccount() {
+        return view('user_dashboard');
     }
 }

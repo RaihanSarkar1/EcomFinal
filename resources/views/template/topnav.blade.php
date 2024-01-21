@@ -37,7 +37,7 @@
                                     @auth
                                     <li>
                                         <div class="header-dropdown">
-                                            <a href="#">{{ Auth::user()->name }}</a>
+                                            <a href="{{ url('my_account') }}"><i class="icon-user"></i>{{ Auth::user()->name }}</a>
                                             <div class="header-menu">
                                                 <ul>
                                                     <li><a href="{{ url('my_account') }}">My Account</a></li>

@@ -91,7 +91,7 @@
                         <span>log in</span>
                     </a>
 
-                    <p>Dear user, log in to access the admin area!</p>
+                    <p>Dear user, log in to access</p>
                 </div>
 
 
