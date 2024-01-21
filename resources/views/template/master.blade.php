@@ -88,15 +88,20 @@
                                     </div><!-- End .form-choice -->
                                 </div><!-- .End .tab-pane -->
                                 <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                                    <form action="#">
+                                    <form action="{{ url('register_user') }}" method= "post">
+                                        <div class="form-group">
+                                            @csrf
+                                            <label for="register-name">Your user name *</label>
+                                            <input type="text" class="form-control" id="register-name" name="name" required>
+                                        </div><!-- End .form-group -->
                                         <div class="form-group">
                                             <label for="register-email">Your email address *</label>
-                                            <input type="email" class="form-control" id="register-email" name="register-email" required>
+                                            <input type="email" class="form-control" id="register-email" name="email" required>
                                         </div><!-- End .form-group -->
 
                                         <div class="form-group">
                                             <label for="register-password">Password *</label>
-                                            <input type="password" class="form-control" id="register-password" name="register-password" required>
+                                            <input type="password" class="form-control" id="register-password" name="password" required>
                                         </div><!-- End .form-group -->
 
                                         <div class="form-footer">

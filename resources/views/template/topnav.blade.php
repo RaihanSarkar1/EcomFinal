@@ -40,6 +40,7 @@
                                             <a href="#">{{ Auth::user()->name }}</a>
                                             <div class="header-menu">
                                                 <ul>
+                                                    <li><a href="{{ url('my_account') }}">My Account</a></li>
                                                     <li><a href="{{ url('change_password') }}">Change Password</a></li>
                                                     <li><a href="{{ url('logout') }}">Logout</a></li>
                                                 </ul>
@@ -384,4 +385,13 @@
                     </div>
                 </div><!-- End .container -->
             </div><!-- End .header-bottom -->
+
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{ session('success') }}<strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
         </header><!-- End .header -->

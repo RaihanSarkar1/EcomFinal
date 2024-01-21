@@ -90,4 +90,19 @@ class UserController extends Controller
             return redirect()->back()->with('errors', 'User not saved');
         }
     }
+
+    public function registerUser(UserAddRequest $request)
+    {
+
+
+        if (User::insert([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ])) {
+            return redirect('/')->with('success', 'User Registered Sucessfully');
+        } else {
+            return redirect()->back()->with('errors', 'User not saved');
+        }
+    }
 }
