@@ -179,8 +179,8 @@
         </div>
     </div> -->
 
-
-
+    
+    
     <!-- Plugins JS File -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -195,6 +195,8 @@
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/demos/demo-4.js"></script>
+    
+    @yield('page_js')
 </body>
 
 

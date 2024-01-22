@@ -185,8 +185,6 @@
                             <ul class="menu sf-arrows">
                                 <li class="megamenu-container active">
                                     <a href="{{ url('/') }}" class="">Home</a>
-
-
                                 </li>
 
                                 <li>
