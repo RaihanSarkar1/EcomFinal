@@ -69,6 +69,9 @@ Route::get('product/{id}', 'HomeController@product_details');
 Route::get('addToCart/{id}', 'CustomerController@addToCart');
 Route::get('category/{id}', 'CustomerController@category');
 Route::get('cart', 'CustomerController@cart');
+Route::get('my_account', 'CustomerController@myAccount');
+
+
 
 Route::get('categories', 'CustomerController@categories')->middleware('isLoggedIn');
 Route::get('remove/{id}', 'CustomerController@remove')->middleware('isLoggedIn');
@@ -78,5 +81,3 @@ Route::post('cart', 'CustomerController@placeOrder')->middleware('isLoggedIn');
 
 Route::get('my_orders', 'OrderController@myOrders')->middleware('isLoggedIn');
 Route::get('order/{id}', 'OrderController@viewOrder')->middleware('isLoggedIn');
-
-Route::get('my_account', 'CustomerController@myAccount');

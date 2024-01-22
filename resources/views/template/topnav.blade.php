@@ -186,6 +186,7 @@
                                 <li class="megamenu-container active">
                                     <a href="{{ url('/') }}" class="">Home</a>
                                 </li>
+                                
 
                                 <li>
                                     <a href="category.html" class="sf-with-ul">Shop</a>
@@ -366,6 +367,9 @@
                                         <li><a href="elements-cta.html">Call to Action</a></li>
                                         <li><a href="elements-icon-boxes.html">Icon Boxes</a></li>
                                     </ul>
+                                </li>
+                                <li class="megamenu-container">
+                                    <a href="{{ url('my_account') }}#tab-orders" class="">Orders</a>
                                 </li>
                             </ul><!-- End .menu -->
                         </nav><!-- End .main-nav -->

@@ -13,6 +13,11 @@ use App\Http\Requests\OrderRequest;
 
 class OrderController extends Controller
 {
+    function index() {
+        $categories = Category::get();
+        return view('user_dashboard',compact('categories'));
+    }
+
     function manageOrders() {
         $orders = Order::get();
 

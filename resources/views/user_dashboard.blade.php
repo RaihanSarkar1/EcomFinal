@@ -143,6 +143,22 @@
 @endsection
 
 @section('page_js')
+    <script src="assets/js/superfish.min.js"></script>
+	
+	<script>
+		// Get the hash from the URL
+		var hash = window.location.hash;
+		// If the hash is not empty
+		if (hash) {
+			// Find the tab with the same id as the hash
+			var link_id = hash.substring(1)+'-link';
+			var link = document.getElementById(link_id);
+			console.log(link);
+		// Show the tab using Bootstrap's tab method
+		$(link).tab('show');
+		}
+
+	</script>
 
 
 @endsection
