@@ -27,22 +27,28 @@ class CustomerController extends Controller
     }
 
     function cart() {
-        return view('customer_product.cart');
+        $categories = Category::get();
+        return view('home.cart',compact('categories'));
     }
 
-    function addToCart($id) {
+    function addToCart(Request $request, $id) {
         $product = Product::findOrFail($id);
 
         $cart = session()->get('cart',[]);
+        
+        $quantity = $request->quantity;
 
+        if($request->quantity == null){
+            $quantity = "1";
+        }
         if(isset($cart[$id])) {
-            $cart[$id]['quantity']++;
+            $cart[$id]['quantity']+= $quantity;    
         } else {
             $cart[$id] = [
                 "name" => $product->name,
                 "image" => $product->photo,
                 "price" => $product->price,
-                "quantity" => 1
+                "quantity" => $quantity
             ];
         }
 
@@ -57,7 +63,7 @@ class CustomerController extends Controller
                 unset($cart[$id]);
                 session()->put('cart', $cart);
             }
-            return redirect()->back()->with('success', 'Product sucessfully removed!');
+            return redirect()->back()->with('success', 'Product removed sucessfully!');
         }
     }
 

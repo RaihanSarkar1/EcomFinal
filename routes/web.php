@@ -66,11 +66,11 @@ Route::get('customer_view_product', 'CustomerController@viewProducts')->middlewa
 
 // Customer view a product
 Route::get('product/{id}', 'HomeController@product_details');
+Route::get('addToCart/{id}', 'CustomerController@addToCart');
+Route::get('category/{id}', 'CustomerController@category');
+Route::get('cart', 'CustomerController@cart');
 
 Route::get('categories', 'CustomerController@categories')->middleware('isLoggedIn');
-Route::get('category/{id}', 'CustomerController@category')->middleware('isLoggedIn');
-Route::get('product/addToCart/{id}', 'CustomerController@addToCart')->middleware('isLoggedIn');
-Route::get('cart', 'CustomerController@cart')->middleware('isLoggedIn');
 Route::get('remove/{id}', 'CustomerController@remove')->middleware('isLoggedIn');
 Route::post('cart', 'CustomerController@placeOrder')->middleware('isLoggedIn');
 

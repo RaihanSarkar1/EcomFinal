@@ -68,7 +68,7 @@
                             <i class="icon-bars"></i>
                         </button>
                         
-                        <a href="/" class="logo">
+                        <a href="{{ url('/') }}" class="logo">
                             <img src="assets/images/demos/demo-4/logo.png" alt="AmarTech Logo" width="105" height="25">
                         </a>
                     </div><!-- End .header-left -->
@@ -134,7 +134,7 @@
                                                     <img src="{{ asset('storage/'.$details['image']) }}" alt="product">
                                                 </a>
                                             </figure>
-                                            <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
+                                            <a href="{{ url('remove/'.$id) }}" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
                                         </div><!-- End .product -->
 
                                     @endforeach
@@ -150,7 +150,7 @@
                                 </div><!-- End .dropdown-cart-total -->
 
                                 <div class="dropdown-cart-action">
-                                    <a href="cart.html" class="btn btn-primary">View Cart</a>
+                                    <a href="{{ url('cart') }}" class="btn btn-primary">View Cart</a>
                                     <a href="checkout.html" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
                                 </div><!-- End .dropdown-cart-total -->
                             </div><!-- End .dropdown-menu -->
@@ -184,7 +184,7 @@
                         <nav class="main-nav">
                             <ul class="menu sf-arrows">
                                 <li class="megamenu-container active">
-                                    <a href="/" class="">Home</a>
+                                    <a href="{{ url('/') }}" class="">Home</a>
 
 
                                 </li>
