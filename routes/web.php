@@ -65,7 +65,7 @@ Route::get('customer_view_product', 'CustomerController@viewProducts')->middlewa
 
 
 // Customer view a product
-Route::get('product/{id}', 'CustomerController@viewAProduct');
+Route::get('product/{id}', 'HomeController@product_details');
 
 Route::get('categories', 'CustomerController@categories')->middleware('isLoggedIn');
 Route::get('category/{id}', 'CustomerController@category')->middleware('isLoggedIn');

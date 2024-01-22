@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+use App\Product;
+use App\Category;
+
 
 class HomeController extends Controller
 {
@@ -97,5 +100,12 @@ class HomeController extends Controller
         } else {
             return redirect()->back()->with('error', 'Password does not match!');
         }
+    }
+
+    public function product_details($id) {
+        $product = Product::find($id);
+        $categories = Category::get();
+        return view('home.product_details',compact('product','categories'));
+
     }
 }

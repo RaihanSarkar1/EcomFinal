@@ -98,11 +98,11 @@ class CustomerController extends Controller
         return view ('customer_product.category', compact('products','category'));
     }
 
-    function viewAProduct($id) {
-        $product = Product::find($id);
-        $categories = Category::get();
-        return view('customer_product.product',compact('product', 'categories'));
-    }
+    // function viewAProduct($id) {
+    //     $product = Product::find($id);
+    //     $categories = Category::get();
+    //     return view('customer_product.product',compact('product', 'categories'));
+    // }
 
     function myAccount() {
         $categories = Category::get();
