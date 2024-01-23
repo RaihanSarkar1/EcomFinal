@@ -71,7 +71,7 @@
                 <div class="cat-blocks-container">
                     <div class="row">
                         <div class="col-6 col-sm-4 col-lg-2">
-                            <a href="category/2" class="cat-block">
+                            <a href="category_view/2" class="cat-block">
                                 <figure>
                                     <span>
                                         <img src="assets/images/demos/demo-4/cats/1.png" alt="Category image">
@@ -107,7 +107,7 @@
                         </div><!-- End .col-sm-4 col-lg-2 -->
 
                         <div class="col-6 col-sm-4 col-lg-2">
-                            <a href="category.html" class="cat-block">
+                            <a href="category_view/1" class="cat-block">
                                 <figure>
                                     <span>
                                         <img src="assets/images/demos/demo-4/cats/4.png" alt="Category image">

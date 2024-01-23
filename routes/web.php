@@ -64,16 +64,18 @@ Route::post('register_user', 'UserController@registerUser');
 Route::get('customer_view_product', 'CustomerController@viewProducts')->middleware('isLoggedIn');
 
 
-// Customer view a product
+// Geust view
 Route::get('my_account', 'CustomerController@myAccount')->middleware('isLoggedIn');
 Route::get('product/{id}', 'HomeController@product_details');
 Route::get('addToCart/{id}', 'CustomerController@addToCart');
-Route::get('category/{id}', 'CustomerController@category');
 Route::get('cart', 'CustomerController@cart');
 Route::get('remove/{id}', 'CustomerController@remove');
+Route::get('category_view/{id}', 'HomeController@category');
+Route::get('category', 'HomeController@shop');
 
 
 
+Route::get('category/{id}', 'CustomerController@category');
 Route::get('categories', 'CustomerController@categories')->middleware('isLoggedIn');
 Route::post('cart', 'CustomerController@placeOrder')->middleware('isLoggedIn');
 

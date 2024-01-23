@@ -171,7 +171,7 @@
                                 <nav class="side-nav">
                                     <ul class="menu-vertical sf-arrows">
                                         @foreach ($categories as $category)
-                                            <li><a href="category/{{ $category->id }}">{{ $category->name }}</a></li>
+                                            <li><a href="category_view/{{ $category->id }}">{{ $category->name }}</a></li>
 
                                         @endforeach
                                     </ul><!-- End .menu-vertical -->
@@ -189,7 +189,7 @@
                                 
 
                                 <li>
-                                    <a href="category.html" class="sf-with-ul">Shop</a>
+                                    <a href="{{url('category')}}" class="sf-with-ul">Shop</a>
 
                                     <div class="megamenu megamenu-md">
                                         <div class="row no-gutters">
@@ -199,11 +199,10 @@
                                                         <div class="col-md-6">
                                                             <div class="menu-title">Shop with sidebar</div><!-- End .menu-title -->
                                                             <ul>
-                                                                <li><a href="category-list.html">Shop List</a></li>
+                                                                <li><a href="{{ url('category') }}">Shop List</a></li>
                                                                 <li><a href="category-2cols.html">Shop Grid 2 Columns</a></li>
                                                                 <li><a href="category.html">Shop Grid 3 Columns</a></li>
                                                                 <li><a href="category-4cols.html">Shop Grid 4 Columns</a></li>
-                                                                <li><a href="category-market.html"><span>Shop Market<span class="tip tip-new">New</span></span></a></li>
                                                             </ul>
 
                                                             <div class="menu-title">Shop no sidebar</div><!-- End .menu-title -->
@@ -221,11 +220,10 @@
                                                             </ul>
                                                             <div class="menu-title">Shop Pages</div><!-- End .menu-title -->
                                                             <ul>
-                                                                <li><a href="cart.html">Cart</a></li>
+                                                                <li><a href="{{ url('cart') }}">Cart</a></li>
                                                                 <li><a href="checkout.html">Checkout</a></li>
                                                                 <li><a href="wishlist.html">Wishlist</a></li>
-                                                                <li><a href="dashboard.html">My Account</a></li>
-                                                                <li><a href="#">Lookbook</a></li>
+                                                                <li><a href="{{ url('my_account') }}">My Account</a></li>
                                                             </ul>
                                                         </div><!-- End .col-md-6 -->
                                                     </div><!-- End .row -->
@@ -348,26 +346,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="elements-list.html" class="sf-with-ul">Elements</a>
 
-                                    <ul>
-                                        <li><a href="elements-products.html">Products</a></li>
-                                        <li><a href="elements-typography.html">Typography</a></li>
-                                        <li><a href="elements-titles.html">Titles</a></li>
-                                        <li><a href="elements-banners.html">Banners</a></li>
-                                        <li><a href="elements-product-category.html">Product Category</a></li>
-                                        <li><a href="elements-video-banners.html">Video Banners</a></li>
-                                        <li><a href="elements-buttons.html">Buttons</a></li>
-                                        <li><a href="elements-accordions.html">Accordions</a></li>
-                                        <li><a href="elements-tabs.html">Tabs</a></li>
-                                        <li><a href="elements-testimonials.html">Testimonials</a></li>
-                                        <li><a href="elements-blog-posts.html">Blog Posts</a></li>
-                                        <li><a href="elements-portfolio.html">Portfolio</a></li>
-                                        <li><a href="elements-cta.html">Call to Action</a></li>
-                                        <li><a href="elements-icon-boxes.html">Icon Boxes</a></li>
-                                    </ul>
-                                </li>
                                 @auth
                                 <li class="megamenu-container">
                                     <a href="{{ url('my_account') }}#tab-orders" class="">Orders</a>

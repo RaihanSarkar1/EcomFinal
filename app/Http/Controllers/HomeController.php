@@ -108,4 +108,17 @@ class HomeController extends Controller
         return view('home.product_details',compact('product','categories'));
 
     }
+
+    public function category($id) {
+        $category = Category::find($id);
+        $categories = Category::get();
+        $products = $category->products;
+        return view('home.category',compact('products','categories'));
+    }
+
+    public function shop() {
+        $categories = Category::get();
+        $products = Product::get();
+        return view('home.category',compact('products','categories'));
+    }
 }
