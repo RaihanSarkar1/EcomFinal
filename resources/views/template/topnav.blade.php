@@ -368,9 +368,11 @@
                                         <li><a href="elements-icon-boxes.html">Icon Boxes</a></li>
                                     </ul>
                                 </li>
+                                @auth
                                 <li class="megamenu-container">
                                     <a href="{{ url('my_account') }}#tab-orders" class="">Orders</a>
                                 </li>
+                                @endauth
                             </ul><!-- End .menu -->
                         </nav><!-- End .main-nav -->
                     </div><!-- End .header-center -->

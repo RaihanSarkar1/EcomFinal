@@ -33,6 +33,7 @@
 
             <div class="page-content">
             	<div class="cart">
+                    @if (session('cart'))
 	                <div class="container">
 	                	<div class="row">
 	                		<div class="col-lg-9">
@@ -85,11 +86,10 @@
 									
 									</tbody>
 								</table><!-- End .table table-wishlist -->
-
 	                			<div class="cart-bottom">
-			            			<div class="cart-discount">
-			            				<form action="#">
-			            					<div class="input-group">
+                                    <div class="cart-discount">
+                                        <form action="#">
+                                            <div class="input-group">
 				        						<input type="text" class="form-control" required placeholder="coupon code">
 				        						<div class="input-group-append">
 													<button class="btn btn-outline-primary-2" type="submit"><i class="icon-long-arrow-right"></i></button>
@@ -97,7 +97,7 @@
 			        						</div><!-- End .input-group -->
 			            				</form>
 			            			</div><!-- End .cart-discount -->
-
+                                    
 			            			<a href="#" class="btn btn-outline-dark-2"><span>UPDATE CART</span><i class="icon-refresh"></i></a>
 		            			</div><!-- End .cart-bottom -->
 	                		</div><!-- End .col-lg-9 -->
@@ -107,8 +107,8 @@
 	                				<h3 class="summary-title">Cart Total</h3><!-- End .summary-title -->
 
 	                				<table class="table table-summary">
-	                					<tbody>
-	                						<tr class="summary-subtotal">
+                                        <tbody>
+                                            <tr class="summary-subtotal">
 	                							<td>Subtotal:</td>
 	                							<td>৳{{ $subtotal }}</td>
 	                						</tr><!-- End .summary-subtotal -->
@@ -116,7 +116,7 @@
 	                							<td>Shipping:</td>
 	                							<td>&nbsp;</td>
 	                						</tr>
-
+                                            
 	                						<tr class="summary-shipping-row">
 	                							<td>
 													<div class="custom-control custom-radio">
@@ -136,7 +136,7 @@
 	                							</td>
 	                							<td>৳10.00</td>
 	                						</tr><!-- End .summary-shipping-row -->
-
+                                            
 	                						<tr class="summary-shipping-row">
 	                							<td>
 	                								<div class="custom-control custom-radio">
@@ -161,17 +161,29 @@
 
 	                				<a href="checkout.html" class="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO CHECKOUT</a>
 	                			</div><!-- End .summary -->
-
+                                
 		            			<a href="category.html" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i class="icon-refresh"></i></a>
 	                		</aside><!-- End .col-lg-3 -->
 	                	</div><!-- End .row -->
 	                </div><!-- End .container -->
+                    @else
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-9">
+                                    <p>Your Shopping cart is empty</p>
+                                    <a href="{{ url('/') }}" class="btn btn-outline-primary-2"><span>GO SHOP</span><i class="icon-long-arrow-right"></i></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+
                 </div><!-- End .cart -->
             </div><!-- End .page-content -->
         </main><!-- End .main -->
 
-
-
+        
+        
         @include('template.footer')
 
     </div><!-- End .page-wrapper -->
