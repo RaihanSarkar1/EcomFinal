@@ -31,6 +31,24 @@ class CustomerController extends Controller
         return view('home.cart',compact('categories'));
     }
 
+    function updateCart(Request $request){
+        dd($request);
+    }
+
+    function updateCartQuantity(Request $request) {
+        $id = $request->id;
+        $quantity = $request->quantity;
+
+        $cart = session()->get('cart',[]);
+
+        $cart[$id]['quantity'] = $quantity;
+
+        session()->put('cart', $cart);
+
+    
+        return response()->json(['success' => true]);
+    }
+
     function addToCart(Request $request, $id) {
         $product = Product::findOrFail($id);
 

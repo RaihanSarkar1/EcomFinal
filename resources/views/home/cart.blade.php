@@ -56,20 +56,20 @@
                                                 <td class="product-col">
                                                     <div class="product">
                                                         <figure class="product-media">
-                                                            <a href="#">
+                                                            <a href="{{url('product/'.$id)}}">
                                                                 <img src="{{ asset('storage/'.$products['image']) }}" alt="Product image">
                                                             </a>
                                                         </figure>
 
                                                         <h3 class="product-title">
-                                                            <a href="#">{{ $products['name'] }}</a>
+                                                            <a href=" {{url('product/'.$id)}}">{{ $products['name'] }}</a>
                                                         </h3><!-- End .product-title -->
                                                     </div><!-- End .product -->
                                                 </td>
                                                 <td class="price-col">৳{{ $products['price'] }}</td>
                                                 <td class="quantity-col">
                                                     <div class="cart-product-quantity">
-                                                        <input type="number" class="form-control" value="{{ $products['quantity'] }}" min="1" max="10" step="1" data-decimals="0" required>
+                                                        <input type="number" class="form-control quantity" value="{{ $products['quantity'] }}" data-id="{{ $id }}" min="1" max="10" step="1" data-decimals="0" required>
                                                     </div><!-- End .cart-product-quantity -->
                                                 </td>
                                                 @php 
@@ -98,7 +98,7 @@
 			            				</form>
 			            			</div><!-- End .cart-discount -->
                                     
-			            			<a href="#" class="btn btn-outline-dark-2"><span>UPDATE CART</span><i class="icon-refresh"></i></a>
+			            			<a href="{{ url('cart') }}" class="btn btn-outline-dark-2"><span>UPDATE CART</span><i class="icon-refresh"></i></a>
 		            			</div><!-- End .cart-bottom -->
 	                		</div><!-- End .col-lg-9 -->
 
@@ -316,6 +316,7 @@
 
 
     <!-- Plugins JS File -->
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery.hoverIntent.min.js"></script>
@@ -329,6 +330,31 @@
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/demos/demo-4.js"></script>
+
+    <script>
+        $(".quantity").on("change paste keyup", function() {
+            console.log($(this).val());
+            let quantity = $(this).val();
+            let item_id = $(this).data("id");
+
+            console.log(item_id);
+
+            $.ajax({
+                url: '/cart/updateQuantity',
+                method: 'PATCH',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    id: item_id,
+                    quantity: quantity
+                },
+                success:
+                function (response) {
+                    // Handle success
+                    window.location.reload();
+                }
+            });
+        });
+    </script>
 </body>
 
 

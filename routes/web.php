@@ -69,9 +69,11 @@ Route::get('my_account', 'CustomerController@myAccount')->middleware('isLoggedIn
 Route::get('product/{id}', 'HomeController@product_details');
 Route::get('addToCart/{id}', 'CustomerController@addToCart');
 Route::get('cart', 'CustomerController@cart');
+Route::get('cart/update', 'CustomerController@updateCart');
 Route::get('remove/{id}', 'CustomerController@remove');
 Route::get('category_view/{id}', 'HomeController@category');
 Route::get('category', 'HomeController@shop');
+Route::patch('cart/updateQuantity', 'CustomerController@updateCartQuantity');
 
 
 
