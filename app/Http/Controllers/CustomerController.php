@@ -103,12 +103,18 @@ class CustomerController extends Controller
             }
             
                     Session::forget('cart');
-                    return redirect('home')->with('success', 'Order placed sucessfully!');
+                    return redirect('/')->with('success', 'Order placed sucessfully!');
 
         } else {
             return redirect()->back()->with('notice', 'Your cart is empty!');
         }
 
+    }
+
+    function checkout() {
+        $categories = Category::get();
+
+        return view('home.checkout', compact('categories'));
     }
 
     function categories() {

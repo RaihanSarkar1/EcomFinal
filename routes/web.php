@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Product;
+use App\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use App\Product;
 */
 
 Route::get('/', function () {
-    $categories = DB::table('categories')->get();
+    $categories = Category::all();
     $products = Product::all();
     return view('index', compact('categories','products'));
 });
@@ -79,9 +80,10 @@ Route::patch('cart/updateQuantity', 'CustomerController@updateCartQuantity');
 
 Route::get('category/{id}', 'CustomerController@category');
 Route::get('categories', 'CustomerController@categories')->middleware('isLoggedIn');
-Route::post('cart', 'CustomerController@placeOrder')->middleware('isLoggedIn');
 
 
+Route::post('checkout', 'CustomerController@placeOrder')->middleware('isLoggedIn');
+Route::get('checkout', 'CustomerController@checkout')->middleware('isLoggedIn');
 
 Route::get('my_orders', 'OrderController@myOrders')->middleware('isLoggedIn');
 Route::get('order/{id}', 'OrderController@viewOrder')->middleware('isLoggedIn');
