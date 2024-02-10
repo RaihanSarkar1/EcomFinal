@@ -8,7 +8,7 @@
         <div class="panel-heading">
             <div class="panel-title">
                 <h4>
-                    <i class="fa-shopping-cart"></i> My Order Details
+                    <i class="fa-shopping-cart"></i> Order Details
                     <a href="{{url('manage_orders')}}" class="btn-danger btn-sm float-end">Back</a>
 
                 </h4>

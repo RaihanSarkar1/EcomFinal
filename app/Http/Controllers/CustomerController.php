@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
 use App\Order;
+use App\User;
 use App\OrderProduct;
 use App\Http\Requests\OrderRequest;
 
@@ -135,7 +136,10 @@ class CustomerController extends Controller
     // }
 
     function myAccount() {
+        $user_id = Auth::id();
+        $user = User::find($user_id);
+        $orders = $user->orders->sortByDesc('created_at');    
         $categories = Category::get();
-        return view('user_dashboard', compact('categories'));
+        return view('user_dashboard', compact('categories','orders'));
     }
 }

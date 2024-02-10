@@ -70,10 +70,11 @@
 	            				<h4 class="widget-title">My Account</h4><!-- End .widget-title -->
 
 	            				<ul class="widget-list">
-	            					<li><a href="#">Sign In</a></li>
-	            					<li><a href="cart.html">View Cart</a></li>
-	            					<li><a href="#">My Wishlist</a></li>
-	            					<li><a href="#">Track My Order</a></li>
+									@guest
+	            						<li><a href="{{ url('login') }}">Sign In</a></li>
+									@endguest
+	            					<li><a href="cart">View Cart</a></li>
+	            					<li><a href="{{ url('my_account') }}#tab-orders">Track My Order</a></li>
 	            					<li><a href="#">Help</a></li>
 	            				</ul><!-- End .widget-list -->
 	            			</div><!-- End .widget -->
