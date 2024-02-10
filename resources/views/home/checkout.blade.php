@@ -119,18 +119,22 @@
 		                					</thead>
 
 		                					<tbody>
+												@php
+												$total = 0;
+												@endphp
+												@foreach(session('cart') as $id => $product)
 		                						<tr>
-		                							<td><a href="#">Beige knitted elastic runner shoes</a></td>
-		                							<td>$84.00</td>
+		                							<td><a href="{{ url('product',$id)}}">{{ $product['name']}}</a></td>
+		                							<td>৳{{ $product['price']}} x {{ $product['quantity'] }}</td>
 		                						</tr>
-
-		                						<tr>
-		                							<td><a href="#">Blue utility pinafore denimdress</a></td>
-		                							<td>$76,00</td>
-		                						</tr>
+												@php
+												$total += $product['price']*$product['quantity'];
+												@endphp
+												
+												@endforeach
 		                						<tr class="summary-subtotal">
 		                							<td>Subtotal:</td>
-		                							<td>$160.00</td>
+		                							<td>৳{{$total}}</td>
 		                						</tr><!-- End .summary-subtotal -->
 		                						<tr>
 		                							<td>Shipping:</td>
@@ -138,7 +142,7 @@
 		                						</tr>
 		                						<tr class="summary-total">
 		                							<td>Total:</td>
-		                							<td>$160.00</td>
+		                							<td>৳{{$total}}</td>
 		                						</tr><!-- End .summary-total -->
 		                					</tbody>
 		                				</table><!-- End .table table-summary -->

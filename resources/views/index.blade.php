@@ -95,7 +95,7 @@
                         </div><!-- End .col-sm-4 col-lg-2 -->
 
                         <div class="col-6 col-sm-4 col-lg-2">
-                            <a href="category.html" class="cat-block">
+                            <a href="category_view/4" class="cat-block">
                                 <figure>
                                     <span>
                                         <img src="assets/images/demos/demo-4/cats/3.png" alt="Category image">
@@ -131,7 +131,7 @@
                         </div><!-- End .col-sm-4 col-lg-2 -->
 
                         <div class="col-6 col-sm-4 col-lg-2">
-                            <a href="category.html" class="cat-block">
+                            <a href="category_view/3" class="cat-block">
                                 <figure>
                                     <span>
                                         <img src="assets/images/demos/demo-4/cats/6.png" alt="Category image">
