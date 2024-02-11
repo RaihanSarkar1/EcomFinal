@@ -112,13 +112,16 @@ class HomeController extends Controller
     public function category($id) {
         $category = Category::find($id);
         $categories = Category::get();
-        $products = $category->products;
+        $products = DB::table('products')
+                    ->join('product_category', 'products.id', '=','product_category.product_id')
+                    ->where('category_id', '=', $id)
+                    ->paginate(4);
         return view('home.category',compact('products','categories'));
     }
 
     public function shop() {
         $categories = Category::get();
-        $products = Product::get();
+        $products = Product::paginate(4);
         return view('home.category',compact('products','categories'));
     }
 }

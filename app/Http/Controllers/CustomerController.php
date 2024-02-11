@@ -114,7 +114,6 @@ class CustomerController extends Controller
 
     function checkout() {
         $categories = Category::get();
-
         return view('home.checkout', compact('categories'));
     }
 

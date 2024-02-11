@@ -55,12 +55,13 @@
                 	<div class="row">
                 		<div class="col-lg-9">
                 			<div class="toolbox">
+                                @if($products->hasPages())
                 				<div class="toolbox-left">
                 					<div class="toolbox-info">
-                						Showing <span>9 of 56</span> Products
+                						Showing <span>{{ $products->lastItem() }} of {{ $products->total() }}</span> Products
                 					</div><!-- End .toolbox-info -->
                 				</div><!-- End .toolbox-left -->
-
+                                @endif
                 				<div class="toolbox-right">
                 					<div class="toolbox-sort">
                 						<label for="sortby">Sort by:</label>
@@ -176,24 +177,38 @@
 
                             </div><!-- End .products -->
 
+                            @if($products->hasPages())
+
                 			<nav aria-label="Page navigation">
 							    <ul class="pagination">
-							        <li class="page-item disabled">
-							            <a class="page-link page-link-prev" href="#" aria-label="Previous" tabindex="-1" aria-disabled="true">
+							        <li class="page-item {{ $products->onFirstPage()? 'disabled':'' }}">
+							            <a class="page-link page-link-prev" href="{{ $products->previousPageUrl() }}" aria-label="Previous" tabindex="-1" aria-disabled="true">
 							                <span aria-hidden="true"><i class="icon-long-arrow-left"></i></span>Prev
 							            </a>
 							        </li>
-							        <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-							        <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+                                    @php
+                                    $pageNumber = $products->currentPage();
+                                    @endphp
+
+    
+                                    
+							        <li class="page-item {{ $products->currentPage()==1? 'active':''}}" aria-current="page"><a class="page-link" href="{{ $products->url(1) }}">1</a></li>
+							        <li class="page-item"><a class="page-link" href="{{ $products->url(2) }}">2</a></li>
 							        <li class="page-item"><a class="page-link" href="#">3</a></li>
-							        <li class="page-item-total">of 6</li>
-							        <li class="page-item">
-							            <a class="page-link page-link-next" href="#" aria-label="Next">
+                                 
+							        <li class="page-item-total">of 6 {{$products->hasPages()}} {{$products->firstItem() }} {{ $products->lastPage() }}</li>
+							        <li class="page-item {{ $products->lastPage()==$products->currentPage()? 'disabled':''}}">
+							            <a class="page-link page-link-next" href="{{$products->nextPageUrl()}}" aria-label="Next">
 							                Next <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>
 							            </a>
 							        </li>
 							    </ul>
 							</nav>
+ 
+                            @endif
+
+                            
                 		</div><!-- End .col-lg-9 -->
                 		<aside class="col-lg-3 order-lg-first">
                 			<div class="sidebar sidebar-shop">
