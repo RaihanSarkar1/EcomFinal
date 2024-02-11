@@ -54,7 +54,7 @@
                 <div class="container">
                 	<div class="row">
                 		<div class="col-lg-9">
-                			<div class="toolbox">
+                			<div class="toolbox">       
                                 @if($products->hasPages())
                 				<div class="toolbox-left">
                 					<div class="toolbox-info">
@@ -188,16 +188,24 @@
 							        </li>
 
                                     @php
-                                    $pageNumber = $products->currentPage();
+                                    $i = 0;
+
+                                    $start = 2;
+                                    $end = $products->lastPage();
+                                    $currentPage = $products->currentPage();
+                                    if ($currentPage > 3) {
+                                        $start = $currentPage-1;
+                                        $end = $currentPage+1;
+                                    }
                                     @endphp
 
-    
                                     
-							        <li class="page-item {{ $products->currentPage()==1? 'active':''}}" aria-current="page"><a class="page-link" href="{{ $products->url(1) }}">1</a></li>
-							        <li class="page-item"><a class="page-link" href="{{ $products->url(2) }}">2</a></li>
-							        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item {{ $products->currentPage()==1? 'active':''}}" aria-current="page"><a class="page-link" href="{{ $products->url(1) }}">1</a></li>
+							        @for($i = $start; $i<= $end; $i++)
+                                    <li class="page-item {{ $products->currentPage()==$i? 'active':''}}" aria-current="page"><a class="page-link" href="{{ $products->url($i) }}">{{ $i}}</a></li>
+                                    @endfor
                                  
-							        <li class="page-item-total">of 6 {{$products->hasPages()}} {{$products->firstItem() }} {{ $products->lastPage() }}</li>
+							        <li class="page-item-total">of {{ $products->lastPage() }}</li>
 							        <li class="page-item {{ $products->lastPage()==$products->currentPage()? 'disabled':''}}">
 							            <a class="page-link page-link-next" href="{{$products->nextPageUrl()}}" aria-label="Next">
 							                Next <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>
@@ -231,8 +239,8 @@
                                                 @foreach ($categories as $categoryobj )
                                                     <div class="filter-item">
                                                         <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="cat-1">
-                                                            <label class="custom-control-label" for="cat-1">{{ $categoryobj->name }}</label>
+                                                            <input type="checkbox" class="custom-control-input" id="cat-{{$categoryobj->id}}">
+                                                            <label class="custom-control-label" for="cat-{{$categoryobj->id}}">{{ $categoryobj->name }}</label>
                                                         </div><!-- End .custom-checkbox -->
                                                         <span class="item-count">{{ $categoryobj->products->count() }}</span>
                                                     </div><!-- End .filter-item -->
