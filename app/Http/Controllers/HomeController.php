@@ -22,7 +22,8 @@ class HomeController extends Controller
         return view('auth.login');
     }
 
-    public function viewAdmin() {
+    public function viewAdmin()
+    {
         return view('dashboard');
     }
 
@@ -35,22 +36,21 @@ class HomeController extends Controller
         if ($validator->fails()) {
             return redirect('login')->withErrors($validator->errors());
         }
-       // dd(Hash::make('welcome123'));
+        // dd(Hash::make('welcome123'));
         $email = $request->email;
         $password = $request->password;
-       // dd($email, $password);
-//        $user = User::where('email', $email)->first();
-//        if (password_verify($password, $user->password)) {
-//            return redirect('home');
-//        } else {
-//            return redirect('login');
-//        }
+        // dd($email, $password);
+        //        $user = User::where('email', $email)->first();
+        //        if (password_verify($password, $user->password)) {
+        //            return redirect('home');
+        //        } else {
+        //            return redirect('login');
+        //        }
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             $role = Auth::user()->role;
-            if ($role == '1'){
+            if ($role == '1') {
                 return redirect('admin');
-            }
-            else {
+            } else {
                 return redirect('/');
             }
         } else {
@@ -87,10 +87,10 @@ class HomeController extends Controller
         $confirm_password = $data['confirm_password'];
         $user = User::where('id', Auth::id())->first();
         if (password_verify($current_password, $user->password)) {
-//            User::where('id', Auth::id())
-//                ->update([
-//                    'password' => Hash::make($confirm_password)
-//                ]);
+            //            User::where('id', Auth::id())
+            //                ->update([
+            //                    'password' => Hash::make($confirm_password)
+            //                ]);
             DB::table('users')
                 ->where('id', '=', Auth::id())
                 ->update([
@@ -102,26 +102,28 @@ class HomeController extends Controller
         }
     }
 
-    public function product_details($id) {
-        $product = Product::find($id);
+    public function product_details($code)
+    {
+        $product = Product::find($code);
         $categories = Category::get();
-        return view('home.product_details',compact('product','categories'));
-
+        return view('home.product_details', compact('product', 'categories'));
     }
 
-    public function category($id) {
+    public function category($id)
+    {
         $category = Category::find($id);
         $categories = Category::get();
         $products = DB::table('products')
-                    ->join('product_category', 'products.id', '=','product_category.product_id')
-                    ->where('category_id', '=', $id)
-                    ->paginate(4);
-        return view('home.category',compact('products','categories'));
+            ->join('product_category', 'products.id', '=', 'product_category.product_id')
+            ->where('category_id', '=', $id)
+            ->paginate(4);
+        return view('home.category', compact('products', 'categories'));
     }
 
-    public function shop() {
+    public function shop()
+    {
         $categories = Category::get();
         $products = Product::paginate(4);
-        return view('home.category',compact('products','categories'));
+        return view('home.category', compact('products', 'categories'));
     }
 }
