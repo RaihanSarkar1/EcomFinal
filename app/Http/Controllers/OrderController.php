@@ -70,4 +70,13 @@ class OrderController extends Controller
         return view('admin.order', compact('order','user','products'));
     }
 
+    function viewUserOrder($id) {
+        $categories = Category::all();
+        $order = Order::find($id);
+        $user = $order->user;
+        $products = $order->products;
+
+        return view('order.user_order', compact('categories','order','user','products'));
+    }
+
 }

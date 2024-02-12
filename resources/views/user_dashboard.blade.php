@@ -60,20 +60,20 @@
 								<p>No order has been made yet.</p>
 								<a href="category.html" class="btn btn-outline-primary-2"><span>GO SHOP</span><i class="icon-long-arrow-right"></i></a>
 								@endif
-
 								@foreach($orders as $order)
 
+								
 								@php
-
+								
 								$products = $order->products;
-
+								
 								$total = 0;
-
+								
 								$count_products = count($products);
-
+								
 								$first_loop = 0;
 								@endphp
-
+								
 								<table class="table p-3 table-striped table-bordered">
 									<thead>
 										<tr class="text-center">
@@ -84,10 +84,10 @@
 											<th>View order</th>
 										</tr>
 									</thead>
-
+									
 									@foreach ($products as $product)
 									@php
-
+									
 									$total += $product->price*$product->pivot->quantity;
 									@endphp
 
@@ -102,7 +102,7 @@
 											<td>৳{{ $total }}</td>
 											<td><span class="{{ $order->status == 'cancelled'? 'text-danger': ($order->status == 'approved'? 'text-success': '')}}">{{ $order->status }}</span></td>
 											<td>
-												<a href="order/{{$order->id}}" class="btn btn-outline-primary-2"><span>View</span><i class="icon-eye"></i></a>
+												<a href="user_order/{{$order->id}}" class="btn btn-outline-primary-2"><span>View</span><i class="icon-eye"></i></a>
 											</td>
 
 

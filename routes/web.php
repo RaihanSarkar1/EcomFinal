@@ -75,6 +75,7 @@ Route::get('remove/{id}', 'CustomerController@remove');
 Route::get('category_view/{id}', 'HomeController@category');
 Route::get('category', 'HomeController@shop');
 Route::patch('cart/updateQuantity', 'CustomerController@updateCartQuantity');
+Route::get('user_order/{id}', 'OrderController@viewUserOrder')->middleware('isLoggedIn');
 
 
 
@@ -86,4 +87,6 @@ Route::post('checkout', 'CustomerController@placeOrder')->middleware('isLoggedIn
 Route::get('checkout', 'CustomerController@checkout')->middleware('isLoggedIn');
 
 Route::get('my_orders', 'OrderController@myOrders')->middleware('isLoggedIn');
+
+// admin
 Route::get('order/{id}', 'OrderController@viewOrder')->middleware('isLoggedIn');
