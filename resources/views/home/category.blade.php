@@ -37,7 +37,7 @@
         <main class="main">
             <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
                 <div class="container">
-                    <h1 class="page-title">Product List<span>Shop</span></h1>
+                    <h1 class="page-title">{{ $category->name }} List<span>Shop</span></h1>
                 </div><!-- End .container -->
             </div><!-- End .page-header -->
             <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
@@ -224,31 +224,6 @@
                                     <a href="#" class="sidebar-filter-clear">Clean All</a>
                                 </div><!-- End .widget widget-clean -->
 
-                                <div class="widget widget-collapsible">
-                                    <h3 class="widget-title">
-                                        <a data-toggle="collapse" href="#widget-1" role="button" aria-expanded="true" aria-controls="widget-1">
-                                            Category
-                                        </a>
-                                    </h3><!-- End .widget-title -->
-
-                                    <div class="collapse show" id="widget-1">
-                                        <div class="widget-body">
-                                            <div class="filter-items filter-items-count">
-
-                                                @foreach ($categories as $categoryobj )
-                                                <div class="filter-item">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" name="cat[]" class="custom-control-input" id="cat-{{$categoryobj->id}}" value="{{$categoryobj->id}}">
-                                                        <label class="custom-control-label" for="cat-{{$categoryobj->id}}">{{ $categoryobj->name }}</label>
-                                                    </div><!-- End .custom-checkbox -->
-                                                    <span class="item-count">{{ $categoryobj->products->count() }}</span>
-                                                </div><!-- End .filter-item -->
-                                                @endforeach
-
-                                            </div><!-- End .filter-items -->
-                                        </div><!-- End .widget-body -->
-                                    </div><!-- End .collapse -->
-                                </div><!-- End .widget -->
 
 
                                 <div class="widget widget-collapsible">

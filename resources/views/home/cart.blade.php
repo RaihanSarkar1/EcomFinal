@@ -154,7 +154,7 @@
 
 	                						<tr class="summary-total">
 	                							<td>Total:</td>
-	                							<td>৳160.00</td>
+	                							<td>৳{{ $total }}</td>
 	                						</tr><!-- End .summary-total -->
 	                					</tbody>
 	                				</table><!-- End .table table-summary -->

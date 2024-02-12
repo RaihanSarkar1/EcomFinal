@@ -117,7 +117,7 @@ class HomeController extends Controller
             ->join('product_category', 'products.id', '=', 'product_category.product_id')
             ->where('category_id', '=', $id)
             ->paginate(4);
-        return view('home.category', compact('products', 'categories'));
+        return view('home.category', compact('products', 'categories', 'category'));
     }
 
     public function shop()
