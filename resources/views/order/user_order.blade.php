@@ -53,6 +53,8 @@
                         </div>
                     </div>
 
+                    <hr style="margin-bottom: 50px;">
+
                     <div class="row">
                         <br>
                         <h4>Order Items</h4>
@@ -96,8 +98,8 @@
                                 </tr>
                                 @endforeach
                             <tfoot>
-                                <tr>
-                                    <td colspan="4"><strong>Total Amount</strong></td>
+                                <tr style="">
+                                    <td colspan="4" style="text-align: right; padding-right: 10px;"><strong>Total Amount</strong></td>
                                     <td colspan="1"><strong>৳{{ $total_price }}</strong></td>
                                 </tr>
 
@@ -105,6 +107,13 @@
                             </tbody>
                         </table>
                     </div>
+                    
+                    <div class="container" style="display: flex; justify-content: center; align-items:center">
+                        <a href="#" class="btn btn-primary btn-round" target="_blank" style="float: center;">Print Order</a>
+                
+                    </div>
+
+
 
                 </div>
             </div><!-- End .page-content -->
