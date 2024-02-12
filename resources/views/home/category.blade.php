@@ -150,7 +150,7 @@
                                                     <a href="#" class="btn-product btn-compare" title="Compare"><span>compare</span></a>
                                                 </div><!-- End .product-action -->
 
-                                                <a href="{{ url('addToCart/'.$product->id) }}" class="btn-product btn-cart"><span>add to cart</span></a>
+                                                <a href="{{ url('addToCart/'.$product->product_id) }}" class="btn-product btn-cart"><span>add to cart</span></a>
                                             </div><!-- End .product-list-action -->
                                         </div><!-- End .col-sm-6 col-lg-3 -->
 
