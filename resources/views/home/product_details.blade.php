@@ -151,7 +151,7 @@
                                             <span>Category:</span>
                                             @foreach ($product->categories as $category)
                                                 {{ $loop->first ? '': ', '}}
-                                                <a href="{{ url('/category/'.$category->id) }}">{{ $category->name }}</a>            
+                                                <a href="{{ url('/category_view/'.$category->id) }}">{{ $category->name }}</a>            
                                             @endforeach
                                             
                                         </div><!-- End .product-cat -->
