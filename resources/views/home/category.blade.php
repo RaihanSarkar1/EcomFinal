@@ -127,7 +127,7 @@
                                         <div class="col-6 col-lg-3">
                                             <figure class="product-media">
                                                 <span class="product-label label-new">New</span>
-                                                <a href="product.html">
+                                                <a href="{{url('product',$product->product_id)}}">
                                                     <img src="{{ asset('storage/'.$product->photo) }}" alt="Product image" class="product-image">
                                                 </a>
                                             </figure><!-- End .product-media -->
@@ -162,7 +162,7 @@
                                                     <p class="card-code">code: {{ $product->code }}</p>
 
                                                 </div><!-- End .product-cat -->
-                                                <h3 class="product-title"><a href="{{url('product',$product->id)}}">{{ $product->name }}</a></h3><!-- End .product-title -->
+                                                <h3 class="product-title"><a href="{{url('product',$product->product_id)}}">{{ $product->name }}</a></h3><!-- End .product-title -->
 
                                                 <div class="product-content">
                                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque </p>

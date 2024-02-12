@@ -102,9 +102,9 @@ class HomeController extends Controller
         }
     }
 
-    public function product_details($code)
+    public function product_details($id)
     {
-        $product = Product::find($code);
+        $product = Product::find($id);
         $categories = Category::get();
         return view('home.product_details', compact('product', 'categories'));
     }

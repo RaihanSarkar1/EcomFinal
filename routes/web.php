@@ -75,7 +75,6 @@ Route::get('remove/{id}', 'CustomerController@remove');
 Route::get('category_view/{id}', 'HomeController@category');
 Route::get('category', 'HomeController@shop');
 Route::patch('cart/updateQuantity', 'CustomerController@updateCartQuantity');
-Route::post('filter-products', 'HomeController@filterByCategory');
 
 
 
