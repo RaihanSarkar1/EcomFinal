@@ -199,16 +199,16 @@
                                                         <div class="col-md-6">
                                                             <div class="menu-title">Shop with sidebar</div><!-- End .menu-title -->
                                                             <ul>
-                                                                <li><a href="{{ url('category') }}">Shop List</a></li>
-                                                                <li><a href="category-2cols.html">Shop Grid 2 Columns</a></li>
-                                                                <li><a href="category.html">Shop Grid 3 Columns</a></li>
-                                                                <li><a href="category-4cols.html">Shop Grid 4 Columns</a></li>
+                                                                <li><a href="{{ url('category') }}">Shop All Product List</a></li>
+                                                                <li><a href="category-2cols.html" style="text-decoration: line-through;">Shop Grid 2 Columns</a></li>
+                                                                <li><a href="category.html" style="text-decoration: line-through;">Shop Grid 3 Columns</a></li>
+                                                                <li><a href="category-4cols.html" style="text-decoration: line-through;">Shop Grid 4 Columns</a></li>
                                                             </ul>
 
                                                             <div class="menu-title">Shop no sidebar</div><!-- End .menu-title -->
                                                             <ul>
-                                                                <li><a href="category-boxed.html"><span>Shop Boxed No Sidebar<span class="tip tip-hot">Hot</span></span></a></li>
-                                                                <li><a href="category-fullwidth.html">Shop Fullwidth No Sidebar</a></li>
+                                                                <li><a href="category-boxed.html" style="text-decoration: line-through;"><span>Shop Boxed No Sidebar<span class="tip tip-hot">Hot</span></span></a></li>
+                                                                <li><a href="category-fullwidth.html" style="text-decoration: line-through;">Shop Fullwidth No Sidebar</a></li>
                                                             </ul>
                                                         </div><!-- End .col-md-6 -->
 

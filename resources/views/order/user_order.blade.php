@@ -34,22 +34,36 @@
             <div class="page-content">
                 <div class="container order">
                     <div class="row">
-                        <div class="col-md-6">
-                            <h5>Order details</h5>
+                        <div class="col-lg-6">
+                            <div class="card card-dashboard">
+                                <div class="card-body">
+                                    <h3 class="card-title">Order details</h3>
 
-                            <hr>
-                            <h6>Order Id: {{ $order->id }} </h6>
-                            <h6>Ordered date: {{ $order->created_at }}</h6>
-                            <h6>Payment mode: {{ $order->payment}}</h6>
-                            <h6 class="border">Order status: <span class="text-uppercase {{ $order->status == 'cancelled'? 'text-danger': ($order->status == 'approved'? 'text-success': 'text-info')}}">{{$order->status}}</span> </h6>
+                                    <hr>
+                                    
+                                    <h6>Order Id: {{ $order->id }} </h6>
+                                    <h6>Ordered date: {{ $order->created_at }}</h6>
+                                    <h6>Payment mode: {{ $order->payment}}</h6>
+                                    <h6>Order status: <span class="text-uppercase {{ $order->status == 'cancelled'? 'text-danger': ($order->status == 'approved'? 'text-success': 'text-info')}}">{{$order->status}}</span> </h6>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <h5>User details</h5>
-                            <hr>
-                            <h6>User ID: {{ $user->id}} </h6>
-                            <h6>User Name: {{ $user->name }}</h6>
-                            <h6>User Email: {{ $user->email }}</h6>
-                            <h6>User address: {{ $order->address }}</h6>
+
+
+                        <div class="col-lg-6">
+                            <div class="card card-dashboard">
+                                <div class="card-body">
+                                    <h3 class="card-title">User details</h3><!-- End .card-title -->
+                                    <hr>
+                                    <h6>User ID: {{ $user->id}} </h6>
+                                    <h6>User Name: {{ $user->name }}</h6>
+                                    <h6>User Email: {{ $user->email }}</h6>
+                                    <h6>User address: {{ $order->address }}</h6>
+                                </div><!-- End .card-body -->
+                            </div><!-- End .card-dashboard -->
+                        </div><!-- End .col-lg-6 -->
+                        <div class="col-lg-6">
+
                         </div>
                     </div>
 
@@ -82,9 +96,9 @@
                                 @foreach($products as $product)
                                 <tr>
                                     <td style="text-align: center; vertical-align:middle; padding-left:40px;">
-                                        
+
                                         <img src="{{ asset('storage/'.$product->photo) }}" alt="" class="" style="height:50px ">
-                                        
+
                                     </td>
                                     <td style="text-align: left;">
                                         {{$product->name}}
@@ -107,10 +121,10 @@
                             </tbody>
                         </table>
                     </div>
-                    
+
                     <div class="container" style="display: flex; justify-content: center; align-items:center">
                         <a href="#" class="btn btn-primary btn-round" target="_blank" style="float: center;">Print Order</a>
-                
+
                     </div>
 
 

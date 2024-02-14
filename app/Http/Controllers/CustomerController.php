@@ -137,8 +137,8 @@ class CustomerController extends Controller
     function myAccount() {
         $user_id = Auth::id();
         $user = User::find($user_id);
-        $orders = $user->orders->sortByDesc('created_at');    
+        $orders = $user->orders->sortByDesc('created_at');
         $categories = Category::get();
-        return view('user_dashboard', compact('categories','orders'));
+        return view('user_dashboard', compact('categories','orders','user'));
     }
 }
