@@ -158,9 +158,9 @@
 							</div><!-- .End .tab-pane -->
 
 							<div class="tab-pane fade" id="tab-account" role="tabpanel" aria-labelledby="tab-account-link">
-								<form action="#">
+								<form action="user_update/{{$user->id}}" method="post">
 									@csrf
-									<div class="row">
+									<div class="row">	
 										<div class="col-sm-6">
 											<label>First Name *</label>
 											<input type="text" class="form-control" required>

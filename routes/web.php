@@ -77,6 +77,8 @@ Route::get('category', 'HomeController@shop');
 Route::patch('cart/updateQuantity', 'CustomerController@updateCartQuantity');
 Route::get('user_order/{id}', 'OrderController@viewUserOrder')->middleware('isLoggedIn');
 
+Route::post('user_update/{id}', 'UserController@updateUser')->middleware('isLoggedIn');
+
 
 
 Route::get('category/{id}', 'CustomerController@category');

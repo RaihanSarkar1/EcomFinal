@@ -105,4 +105,8 @@ class UserController extends Controller
             return redirect()->back()->with('errors', 'User not saved');
         }
     }
+
+    function updateUser($id, UserEditRequest $request){
+        return redirect('my_account')->with('success', 'User Updated');
+    }
 }
