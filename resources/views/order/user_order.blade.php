@@ -70,9 +70,8 @@
                     <hr style="margin-bottom: 50px;">
 
                     <div class="row">
-                        <br>
-                        <h4>Order Items</h4>
-                        <br>
+                        
+                        <h3>Order Items</h3>
                         @if ($errors->any())
                         <h1>{{ $errors->first() }}</h1>
                         @endif
@@ -124,7 +123,6 @@
 
                     <div class="container" style="display: flex; justify-content: center; align-items:center">
                         <a href="#" class="btn btn-primary btn-round" target="_blank" style="float: center;">Print Order</a>
-
                     </div>
 
 
