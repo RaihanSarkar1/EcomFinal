@@ -69,56 +69,52 @@
 
                     <hr style="margin-bottom: 50px;">
 
-                    <div class="row">
+                    <div class="container">
+                        <div class="row mx-5">
                         
-                        <h3>Order Items</h3>
-                        @if ($errors->any())
-                        <h1>{{ $errors->first() }}</h1>
-                        @endif
-
-                        <table id="example-1" class="table table-striped table-bordered text-center" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>Product Image</th>
-                                    <th>Product</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-
-
-                            <tbody>
-                                @php
-                                $total_price = 0;
-                                @endphp
-                                @foreach($products as $product)
-                                <tr>
-                                    <td style="text-align: center; vertical-align:middle; padding-left:40px;">
-
-                                        <img src="{{ asset('storage/'.$product->photo) }}" alt="" class="" style="height:50px ">
-
-                                    </td>
-                                    <td style="text-align: left;">
-                                        {{$product->name}}
-                                    </td>
-                                    <td>৳{{$product->price}}</td>
-                                    <td>{{$product->pivot->quantity}}</td>
-                                    <td>৳{{$product->pivot->quantity * $product->price}}</td>
+                            <h3>Order Items</h3>
+                            @if ($errors->any())
+                            <h1>{{ $errors->first() }}</h1>
+                            @endif
+                            <table id="example-1" class="table table-striped table-bordered text-center" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Product Image</th>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                     @php
-                                    $total_price += $product->pivot->quantity * $product->price;
+                                    $total_price = 0;
                                     @endphp
-                                </tr>
-                                @endforeach
-                            <tfoot>
-                                <tr style="">
-                                    <td colspan="4" style="text-align: right; padding-right: 10px;"><strong>Total Amount</strong></td>
-                                    <td colspan="1"><strong>৳{{ $total_price }}</strong></td>
-                                </tr>
-
-                            </tfoot>
-                            </tbody>
-                        </table>
+                                    @foreach($products as $product)
+                                    <tr>
+                                        <td style="text-align: center; vertical-align:middle; padding-left:40px;">
+                                            <img src="{{ asset('storage/'.$product->photo) }}" alt="" class="" style="height:50px ">
+                                        </td>
+                                        <td style="text-align: left;">
+                                            {{$product->name}}
+                                        </td>
+                                        <td>৳{{$product->price}}</td>
+                                        <td>{{$product->pivot->quantity}}</td>
+                                        <td>৳{{$product->pivot->quantity * $product->price}}</td>
+                                        @php
+                                        $total_price += $product->pivot->quantity * $product->price;
+                                        @endphp
+                                    </tr>
+                                    @endforeach
+                                <tfoot>
+                                    <tr style="">
+                                        <td colspan="4" style="text-align: right; padding-right: 10px;"><strong>Total Amount</strong></td>
+                                        <td colspan="1"><strong>৳{{ $total_price }}</strong></td>
+                                    </tr>
+                                </tfoot>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                     <div class="container" style="display: flex; justify-content: center; align-items:center">
