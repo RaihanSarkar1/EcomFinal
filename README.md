@@ -1,3 +1,23 @@
+# How to run
+- Clone this repository
+- Setup xampp version 7.2.5 with php
+- open terminal and set the head to the project folder
+- run cp .env.exammple .env
+- run composer install
+- run php artisan key:generate
+- start the xampp server: apache and sql
+- run php artisan migrate
+- run php artisan db:seed
+- delete the storage folder if present
+- run php artisan serve to run the project
+- login with credentials provided in the seeder file
+- create categories
+- add products of those categories
+- run php arisan storage:link to view images
+- if images aren't visible delete public/storage folder if empty delete and run storage:link again
+- All done you are set for customers to register accounts and buy products.
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
