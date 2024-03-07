@@ -2,7 +2,7 @@
 - Clone this repository
 - Setup xampp version 7.2.5 with php
 - open terminal and set the head to the project folder
-- run cp .env.exammple .env
+- run cp .env.example .env
 - run composer install
 - run php artisan key:generate
 - start the xampp server: apache and sql
